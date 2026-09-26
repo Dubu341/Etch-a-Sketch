@@ -1,9 +1,12 @@
-for (i = 0; i < 256; i++) {
+let userInput = prompt("gib number blz");
+gridCells = userInput ** 2;
+
+for (i = 0; i < gridCells; i++) {
   const container = document.querySelector("#container");
   let grid = document.createElement("div");
   grid.classList.add("grid");
-  //grid.setAttribute("style", " background: red;");
   container.appendChild(grid);
+  grid.style.width = 960 / userInput + "px";
 }
 
 //changing grid divs color on hover
