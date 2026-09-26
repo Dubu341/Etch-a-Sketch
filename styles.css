@@ -1,4 +1,5 @@
 body {
+    background-color: rgb(128, 128, 128);
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -11,5 +12,7 @@ body {
   flex-wrap: wrap;
 }
 .grid {
+    background-color: white;
   padding: 12px;
+
 }
