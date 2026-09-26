@@ -2,6 +2,9 @@ let promptBtn = document.querySelector("button");
 
 promptBtn.addEventListener("click", () => {
   let userInput = prompt("gib number blz less than 100 blz");
+  while (userInput > 100) {
+    userInput = 100;
+  }
   gridCells = userInput ** 2;
   const container = document.querySelector("#container");
   container.textContent = "";
