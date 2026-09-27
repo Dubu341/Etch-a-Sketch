@@ -12,7 +12,7 @@ function getUserInput() {
   for (i = 0; i < gridCells; i++) {
     let grid = document.createElement("div");
     grid.classList.add("grid");
-    grid.style.width = 960 / userInput + "px";
+    grid.style.width = (100 / userInput) + "%";
     container.appendChild(grid);
   }
 }
