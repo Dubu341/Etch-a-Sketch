@@ -1,5 +1,18 @@
 let promptBtn = document.querySelector("button");
+//on page load grid
+for (i = 0; i < 256; i++) {
+  let grid = document.createElement("div");
+  grid.classList.add("grid");
 
+  container.appendChild(grid);
+  const gridColor = document.querySelectorAll(".grid");
+  gridColor.forEach((grid) => {
+    grid.addEventListener("mouseenter", () => {
+      grid.style.backgroundColor = "blue";
+    });
+  });
+}
+//change grid size
 promptBtn.addEventListener("click", () => {
   let userInput = prompt("gib number blz less than 100 blz");
   while (userInput > 100) {
