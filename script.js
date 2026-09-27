@@ -12,16 +12,22 @@ function getUserInput() {
   for (i = 0; i < gridCells; i++) {
     let grid = document.createElement("div");
     grid.classList.add("grid");
-    grid.style.width = (100 / userInput) + "%";
+    grid.style.width = 100 / userInput + "%";
     container.appendChild(grid);
   }
 }
-
+function getRandomColor() {
+  const r = Math.floor(Math.random() * 256);
+  const g = Math.floor(Math.random() * 256);
+  const b = Math.floor(Math.random() * 256);
+  return `rgb(${r}, ${g}, ${b})`;
+}
+console.log(getRandomColor());
 function changeGridColors() {
   const gridColor = document.querySelectorAll(".grid");
   gridColor.forEach((grid) => {
     grid.addEventListener("mouseenter", () => {
-      grid.style.backgroundColor = "red";
+      grid.style.backgroundColor = getRandomColor();
     });
   });
 }
