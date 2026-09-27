@@ -1,22 +1,8 @@
 let changeGrid = document.querySelector(".changeGrid");
 let resetGrid = document.querySelector(".resetGrid");
 const container = document.querySelector("#container");
-//on page load grid
-for (i = 0; i < 256; i++) {
-  let grid = document.createElement("div");
-  grid.classList.add("grid");
 
-  container.appendChild(grid);
-  const gridColor = document.querySelectorAll(".grid");
-  gridColor.forEach((grid) => {
-    grid.addEventListener("mouseenter", () => {
-      grid.style.backgroundColor = "blue";
-    });
-  });
-}
-
-//change grid size
-changeGrid.addEventListener("click", () => {
+function getUserInput() {
   let userInput = prompt("gib number blz less than 100 blz");
   while (userInput > 100) {
     userInput = 100;
@@ -29,13 +15,28 @@ changeGrid.addEventListener("click", () => {
     grid.style.width = 960 / userInput + "px";
     container.appendChild(grid);
   }
+}
 
+function changeGridColors() {
   const gridColor = document.querySelectorAll(".grid");
   gridColor.forEach((grid) => {
     grid.addEventListener("mouseenter", () => {
-      grid.style.backgroundColor = "blue";
+      grid.style.backgroundColor = "red";
     });
   });
+}
+
+//on page load grid
+for (i = 0; i < 256; i++) {
+  let grid = document.createElement("div");
+  grid.classList.add("grid");
+  container.appendChild(grid);
+  changeGridColors();
+}
+//change grid size
+changeGrid.addEventListener("click", () => {
+  getUserInput();
+  changeGridColors();
 });
 //reset grid => to.do {make the grid hold the userInput instead of the default}
 resetGrid.addEventListener("click", () => {
@@ -43,13 +44,7 @@ resetGrid.addEventListener("click", () => {
   for (i = 0; i < 256; i++) {
     let grid = document.createElement("div");
     grid.classList.add("grid");
-
     container.appendChild(grid);
-    const gridColor = document.querySelectorAll(".grid");
-    gridColor.forEach((grid) => {
-      grid.addEventListener("mouseenter", () => {
-        grid.style.backgroundColor = "blue";
-      });
-    });
   }
+  changeGridColors();
 });
