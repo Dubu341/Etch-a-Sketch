@@ -22,12 +22,16 @@ function getRandomColor() {
   const b = Math.floor(Math.random() * 256);
   return `rgb(${r}, ${g}, ${b})`;
 }
-console.log(getRandomColor());
+
 function changeGridColors() {
   const gridColor = document.querySelectorAll(".grid");
+
   gridColor.forEach((grid) => {
     grid.addEventListener("mouseenter", () => {
       grid.style.backgroundColor = getRandomColor();
+      let currentOpacity = parseFloat(grid.style.opacity) || 0.2;
+      let newOpacity = Math.min(currentOpacity + 0.2, 1.0);
+      grid.style.opacity = newOpacity;
     });
   });
 }
@@ -37,8 +41,8 @@ for (i = 0; i < 256; i++) {
   let grid = document.createElement("div");
   grid.classList.add("grid");
   container.appendChild(grid);
-  changeGridColors();
 }
+changeGridColors();
 //change grid size
 changeGrid.addEventListener("click", () => {
   getUserInput();
