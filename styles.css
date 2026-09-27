@@ -2,7 +2,7 @@ body {
   background-color: rgb(128, 128, 128);
   margin: 0 auto;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
 }
@@ -21,13 +21,15 @@ body {
 }
 
 .button {
-  padding: 20px;
+  padding: 0px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 button {
   display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: rgba(211, 211, 211, 0.918);
   margin: 10px;
   border-radius: 10px;

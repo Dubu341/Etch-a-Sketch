@@ -25,7 +25,6 @@ function getRandomColor() {
 
 function changeGridColors() {
   const gridColor = document.querySelectorAll(".grid");
-
   gridColor.forEach((grid) => {
     grid.addEventListener("mouseenter", () => {
       grid.style.backgroundColor = getRandomColor();
